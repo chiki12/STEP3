@@ -102,25 +102,6 @@ def tokenize(line):
   return tokens
 
 
-# エラーが出たのでとりあえずこの方法やめます
-# def evaluate_p(tokens):
-#   answer = 0
-#   plist = []
-#   pcount = 0
-#   index = 0
-#   store = 0
-#   while index < len(tokens):
-#     if tokens[index]['type'] == "OPENP":
-#       plist.append[index]
-#       pcount += 1
-#     if tokens[index]['type'] == "CLOSEP":
-#       pcount -=1
-#       store = evaluate(tokens[plist[pcount]+1:index])
-#       del tokens[plist[pcount]:index+1]
-#       del plist[pcount]
-#       tokens[plist[-1]]= {'type': 'NUMBER', 'number': store}
-#     else: index +=1
-#   return tokens
 
 
 # 宿題1 
@@ -159,7 +140,7 @@ def evaluate(tokens):
   return answer
 
 
-'''
+'''    →  この部分は無視してください
 # *,/だけ含む式の計算をする
 def evaluate_t_d(tokens):
   answer = 1
@@ -200,7 +181,6 @@ def evaluate(tokens):
 
 def test(line):
   tokens = tokenize(line)
-  # print(tokens)
   actual_answer = evaluate(tokens)
   expected_answer = eval(line)
   if abs(actual_answer - expected_answer) < 1e-8:
